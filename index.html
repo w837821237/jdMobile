@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <title>多快好省,购物上京东!</title>
+</head>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="./zepto-master/src/zepto.min.js"></script>
+    <script src="./zepto-master/src/selector.js"></script>
+    <script src="./zepto-master/src/fx.js"></script>
+    <script src="./zepto-master/src/touch.js"></script>
+<body>
+   <div class="jd_layout">
+       <div class="jd_search">
+           <a href="javascript:;" class="jd_logo"></a>
+           <form class="jd_searchBox" >
+               <input type="text" name="" value="" placeholder="请输入商品名称">
+           </form>
+           <a href="javascript:;" class="jd_login">登录</a>
+       </div>
+       <div class="jd_banner clearfix">
+           <ul class="jd_bannerImg clearfix">
+               <li><a href="javascript:;"><img src="uploads/l1.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l2.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l3.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l4.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l5.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l6.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l7.jpg" alt=""></a></li>
+               <li><a href="javascript:;"><img src="uploads/l8.jpg" alt=""></a></li>
+           </ul>
+           <ul class="jd_bannerIndicaror" >
+               <li class="active"></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+           </ul>
+       </div>
+       <div class="jd_nav clearfix">
+           <ul >
+               <li><a href="javascript:;"><img src="uploads/nav0.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav1.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav2.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav3.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav4.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav5.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav6.png" alt=""><p>商品分类</p></a></li>
+               <li><a href="javascript:;"><img src="uploads/nav7.png" alt=""><p>商品分类</p></a></li>
+           </ul>
+       </div>
+       <div class="jd_product">
+        <!-- 秒杀栏 -->
+        <div class="ms-all">
+          <!-- 标题部分 -->
+          <div class="ms-title">
+                   <img src="uploads/seckill-icon.png" alt="" class="timeI f_left m_left10">
+                   <span class="ms f_left m_left10">掌上秒杀</span>
+                   <div class="timeB f_left">
+                     <span>0</span>
+                     <span>0</span>
+                     <span>:</span>
+                     <span>0</span>
+                     <span>0</span>
+                     <span>:</span>
+                     <span>0</span>
+                     <span>0</span>
+                   </div>
+
+                     <span class="gdms f_right ">更多秒杀...</span>
+          </div>
+           <!-- 内容部分 -->
+
+        </div>
+        <!-- 产品第一部分 -->
+              <div class="jd_productBox ">
+                <div class="jd_Ptip">
+                    <h3>京东超市</h3>
+                </div>
+                <div class="jd_Pcontent clearfix" >
+                     <a href="javascript:;" class="a_50 f_left ">
+                         <img src="uploads/cp1.jpg" alt="" class="productC">
+                     </a>
+                     <a href="javascript:;" class="a_50 f_left b_bottom b_left">
+                         <img src="uploads/cp2.jpg" alt="">
+                     </a>
+                     <a href="javascript:;" class="a_50 f_left b_left">
+                         <img src="uploads/cp3.jpg" alt="">
+                     </a>
+
+                </div>
+            </div>
+       <!--  产品第二部分 -->
+
+            <div class="jd_productBox ">
+                <div class="jd_Ptip">
+                    <h3>京东超市</h3>
+                </div>
+                <div class="jd_Pcontent clearfix" >
+                     <a href="javascript:;" class="a_50 f_left ">
+                         <img src="uploads/cp4.jpg" alt="" class="productC">
+                     </a>
+                     <a href="javascript:;" class="a_50 f_left b_bottom b_left">
+                         <img src="uploads/cp5.jpg" alt="">
+                     </a>
+                     <a href="javascript:;" class="a_50 f_left b_left">
+                         <img src="uploads/cp6.jpg" alt="">
+                     </a>
+
+                </div>
+            </div>
+      </div>
+   </div>
+
+   <script>
+   $(function(){
+
+
+      var banner =$(".jd_banner");
+      var bannerWidth = banner.width();
+      var imgBox=banner.find("ul:first-of-type");
+      var indicators = banner.find("ul:eq(1)").find("li");
+      console.log(indicators);
+  // 获取首位两张图片
+      var first = imgBox.find("li:eq(0)");
+      var last  = imgBox.find("li:last-of-type");
+  // 在第一张之前和最后一张添加图片
+       imgBox.append(first.clone());
+       last.clone().insertBefore(first);
+  // 设置图片盒子的宽度
+       var lis = imgBox.find("li");
+       var count = lis.length;
+       imgBox.width(count*bannerWidth);
+       console.log(bannerWidth);
+       lis.each(function(index,value){
+        $(lis[index]).width(bannerWidth);
+       })
+       imgBox.css("left",-bannerWidth);
+   // 动画进行自动轮播
+   var  index = 1 ;
+   function imgAnimation(){
+    imgBox.animate(
+     {"left":-index*bannerWidth},
+     500,
+     "ease-in-out",
+     function(){
+        if (index==count-1) {
+           index=1;
+           imgBox.css("left",-index*bannerWidth);
+        }
+        else if (index==0) {
+           index= count -2;
+           imgBox.css("left",-index*bannerWidth);
+        }
+        // 设置点标记
+        indicators.removeClass("active").eq(index-1).addClass("active");
+    }
+    )
+   }
+  var timerId= setInterval(function() {
+    index++;
+    imgAnimation();
+   }, 2000)
+
+    imgBox.on("swipeLeft",function(){
+            clearInterval(timerId);
+            index++;
+            imgAnimation();
+        });
+
+    imgBox.on("swipeRight",function(){
+            clearInterval(timerId);
+            index--;
+            imgAnimation();
+        });
+
+
+   })
+
+   </script>
+</body>
+</html>
